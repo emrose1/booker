@@ -21,8 +21,8 @@ angular.module('fitbookerApp')
         var deferred = $q.defer();
 
         $http.post('/auth/local', {
-          email: user.email,
-          password: user.password
+          username: user.email + '@' + user.account,
+          password: user.password,
         }).
         success(function(data) {
           $cookieStore.put('token', data.token);

@@ -12,6 +12,8 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  account: { type: mongoose.Schema.Types.ObjectId, ref: 'Account' },
+  username: { type: String, lowercase: true },
   hashedPassword: String,
   provider: String,
   salt: String,
@@ -41,6 +43,7 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
+      'account': this.account,
       'role': this.role
     };
   });
@@ -77,10 +80,10 @@ UserSchema
 
 // Validate email is not taken
 UserSchema
-  .path('email')
+  .path('username')
   .validate(function(value, respond) {
     var self = this;
-    this.constructor.findOne({email: value}, function(err, user) {
+    this.constructor.findOne({username: value}, function(err, user) {
       if(err) throw err;
       if(user) {
         if(self.id === user.id) return respond(true);

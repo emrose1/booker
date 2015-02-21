@@ -8,6 +8,13 @@
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
 
+        <div class="form-group">
+          <select ng-model="user.account" class="form-control"
+            ng-options="account._id as account.name for account in accounts">
+          </select>
+        </div>
+
+
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
           <label>Name</label>
