@@ -1,30 +1,6 @@
-'use strict';
+ 'use strict';
 
 angular.module('fitbookerApp')
-  .config(function ($stateProvider) {
-    $stateProvider
-      .state('account', {
-        url: '/account',
-        templateUrl: 'app/account/account.html',
-        controller: 'AccountCtrl'
-      })
-      .state('login', {
-        url: '/login',
-        templateUrl: 'app/account/login/login.html',
-        controller: 'LoginCtrl'
-      })
-      .state('signup', {
-        url: '/signup',
-        templateUrl: 'app/account/signup/signup.html',
-        controller: 'SignupCtrl'
-      })
-      .state('settings', {
-        url: '/settings',
-        templateUrl: 'app/account/settings/settings.html',
-        controller: 'SettingsCtrl',
-        authenticate: true
-      });
-  })
 
   .controller('AccountCtrl', ['$rootScope', '$scope', 'Account',
     function($rootScope, $scope, Account) {
@@ -57,7 +33,7 @@ angular.module('fitbookerApp')
           getAccounts();
         });
       } else {
-      $scope.account.$save().then(function(response) {
+      $scope.account.$save().then(function() {
         getAccounts();
       });
       }

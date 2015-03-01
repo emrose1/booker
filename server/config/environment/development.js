@@ -8,5 +8,13 @@ module.exports = {
     uri: 'mongodb://localhost/fitbooker-dev'
   },
 
+  mail: {
+	  service: 'Gmail',
+	  auth: {
+	      user: 'emjrose@gmail.com',
+	      pass: 'Cokie1971'
+	  }
+	},
+
   seedDB: true
 };

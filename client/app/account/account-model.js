@@ -1,3 +1,5 @@
+ 'use strict';
+
 angular.module('fitbookerApp')
 .provider('Account', function() {
 
