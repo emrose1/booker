@@ -93,3 +93,150 @@ An example server component in `server/api`
     └── thing.spec.js           - Test
 
 
+## Generators
+
+Available generators:
+
+* Server Side
+    - [angular-fullstack:endpoint](#endpoint)
+* Client Side
+    - [angular-fullstack:route](#route)
+    - [angular-fullstack:controller](#controller)
+    - [angular-fullstack:filter](#filter)
+    - [angular-fullstack:directive](#directive)
+    - [angular-fullstack:service](#service)
+    - [angular-fullstack:provider](#service)
+    - [angular-fullstack:factory](#service)
+    - [angular-fullstack:decorator](#decorator)
+* Deployment
+    - [angular-fullstack:openshift](#openshift)
+    - [angular-fullstack:heroku](#heroku)
+
+
+### Endpoint
+Generates a new API endpoint.
+
+
+Example:
+```bash
+yo angular-fullstack:endpoint message
+[?] What will the url of your endpoint be? /api/messages
+```
+
+Produces:
+
+    server/api/message/index.js
+    server/api/message/message.spec.js
+    server/api/message/message.controller.js
+    server/api/message/message.model.js  (optional)
+    server/api/message/message.socket.js (optional)
+
+### Route
+Generates a new route.
+
+Example:
+```bash
+yo angular-fullstack:route myroute
+[?] Where would you like to create this route? client/app/
+[?] What will the url of your route be? /myroute
+```
+
+Produces:
+
+    client/app/myroute/myroute.js
+    client/app/myroute/myroute.controller.js
+    client/app/myroute/myroute.controller.spec.js
+    client/app/myroute/myroute.html
+    client/app/myroute/myroute.scss
+
+
+### Controller
+Generates a controller.
+
+Example:
+```bash
+yo angular-fullstack:controller user
+[?] Where would you like to create this controller? client/app/
+```
+
+Produces:
+
+    client/app/user/user.controller.js
+    client/app/user/user.controller.spec.js
+
+### Directive
+Generates a directive.
+
+Example:
+```bash
+yo angular-fullstack:directive myDirective
+[?] Where would you like to create this directive? client/app/
+[?] Does this directive need an external html file? Yes
+```
+
+Produces:
+
+    client/app/myDirective/myDirective.directive.js
+    client/app/myDirective/myDirective.directive.spec.js
+    client/app/myDirective/myDirective.html
+    client/app/myDirective/myDirective.scss
+
+**Simple directive without an html file**
+
+Example:
+```bash
+yo angular-fullstack:directive simple
+[?] Where would you like to create this directive? client/app/
+[?] Does this directive need an external html file? No
+```
+
+Produces:
+
+    client/app/simple/simple.directive.js
+    client/app/simple/simple.directive.spec.js
+
+### Filter
+Generates a filter.
+
+Example:
+```bash
+yo angular-fullstack:filter myFilter
+[?] Where would you like to create this filter? client/app/
+```
+
+Produces:
+
+    client/app/myFilter/myFilter.filter.js
+    client/app/myFilter/myFilter.filter.spec.js
+
+### Service
+Generates an AngularJS service.
+
+Example:
+```bash
+yo angular-fullstack:service myService
+[?] Where would you like to create this service? client/app/
+```
+
+Produces:
+
+    client/app/myService/myService.service.js
+    client/app/myService/myService.service.spec.js
+
+
+You can also do `yo angular-fullstack:factory` and `yo angular-fullstack:provider` for other types of services.
+
+### Decorator
+Generates an AngularJS service decorator.
+
+Example:
+```bash
+yo angular-fullstack:decorator serviceName
+[?] Where would you like to create this decorator? client/app/
+```
+
+Produces
+
+    client/app/serviceName/serviceName.decorator.js
+
+
