@@ -3,6 +3,7 @@
 ## To install dependencies from scratch
 
 `npm install -g bower grunt-cli`
+
 `bower install`
 
 start mongodb `mongod`
@@ -23,6 +24,15 @@ If you're using mongoDB you will need to add a database to your app:
     heroku addons:add mongohq
 
 Your app should now be live. To view it run `heroku open`.
+
+#### Pushing Updates
+
+    grunt
+
+Commit and push the resulting build, located in your dist folder:
+
+    grunt buildcontrol:heroku
+
 
 ## Testing
 
