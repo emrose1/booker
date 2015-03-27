@@ -1,6 +1,6 @@
  'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
 
   .controller('AccountCtrl', ['$rootScope', '$scope', 'Account',
     function($rootScope, $scope, Account) {

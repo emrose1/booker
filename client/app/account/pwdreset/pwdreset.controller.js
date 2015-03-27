@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
   .controller('PwdResetCtrl', function ($scope, Auth, $stateParams) {
 
     var passwordResetToken = $stateParams.passwordResetToken;

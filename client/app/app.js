@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fitbookerApp', [
+angular.module('app', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

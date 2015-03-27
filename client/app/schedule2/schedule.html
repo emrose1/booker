@@ -1,0 +1,22 @@
+<h1 ng-show="schedules.length">Calendars</h1>
+<table class="table table-striped" ng-show="schedules.length">
+    <thead>
+        <th>Title</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="schedule in schedules">
+            <td ng-click="activeSchedule(schedule)">{{schedule.id}}</td>
+            <td ng-click="activeSchedule(schedule)">{{schedule.description}}</td>
+            <td><button class="btn btn-danger" ng-click="delete(schedule)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 ng-if="!editing">New Schedule</h3>
+<h3 ng-if="editing">Edit Schedule</h3>
+<form ng-submit="save(schedule)">
+    <input ng-model="schedule.description">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<button ng-if="editing" class="btn btn-success" ng-click="newSchedule()">New Schedule</button>
+

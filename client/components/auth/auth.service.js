@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
   .factory('Auth', function Auth($location, $rootScope, $http, User, Local, $cookieStore, $q) {
     var currentUser = {};
     if($cookieStore.get('token')) {

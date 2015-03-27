@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
   .controller('ConfirmCtrl', function ($scope, Auth, $location, $stateParams) {
     $scope.errors = {};
     $scope.isLoggedIn = Auth.isLoggedIn;

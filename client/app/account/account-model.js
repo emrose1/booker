@@ -1,6 +1,6 @@
  'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
 .provider('Account', function() {
 
   this.$get = ['$resource', function($resource) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
   .controller('MainCtrl', function ($scope, $http) {
     $scope.awesomeThings = [];
 

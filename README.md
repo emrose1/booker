@@ -1,5 +1,29 @@
 # Bookings using MEAN
 
+## Usage
+
+Install `generator-angular-fullstack`:
+```
+npm install -g generator-angular-fullstack
+```
+
+Make a new directory, and `cd` into it:
+```
+mkdir my-new-project && cd $_
+```
+
+Run `yo angular-fullstack`, optionally passing an app name:
+```
+yo angular-fullstack [app-name]
+```
+
+Run `grunt` for building, `grunt serve` for preview, and `grunt serve:dist` for a preview of the built app.
+
+## Prerequisites
+
+* MongoDB - Download and Install [MongoDB](http://www.mongodb.org/downloads) - If you plan on scaffolding your project with mongoose, you'll need mongoDB to be installed and have the `mongod` process running.
+
+
 ## To install dependencies from scratch
 
 `npm install -g bower grunt-cli`

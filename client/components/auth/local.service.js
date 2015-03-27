@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
   .factory('Local', function ($resource) {
     return $resource('/auth/local/:controller', {
       id: '@_id'

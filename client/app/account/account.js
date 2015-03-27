@@ -1,12 +1,17 @@
 'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
   .config(function ($stateProvider) {
     $stateProvider
       .state('account', {
         url: '/account',
         templateUrl: 'app/account/account.html',
         controller: 'AccountCtrl'
+      })
+      .state('schedule', {
+        url: '/schedule',
+        templateUrl: 'app/schedule/schedule.html',
+        controller: 'ScheduleCtrl'
       })
       .state('login', {
         url: '/login',

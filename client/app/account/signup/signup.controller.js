@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fitbookerApp')
+angular.module('app')
   .controller('SignupCtrl', function ($scope, Auth, $location, $window, Account) {
     $scope.user = {};
     $scope.errors = {};
