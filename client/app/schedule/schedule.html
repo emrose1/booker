@@ -1,0 +1,25 @@
+
+<div class="container">
+  <h1 ng-show="schedCtrl.schedules.length">Schedules</h1>
+  <table class="table table-striped" ng-show="schedCtrl.schedules.length">
+    <thead>
+      <th>Title</th>
+    </thead>
+  <tbody>
+    <tr ng-repeat="schedule in schedCtrl.schedules">
+      <td ng-click="schedCtrl.activeSchedule(schedule)">{{schedule._id}}</td>
+      <td ng-click="schedCtrl.activeSchedule(schedule)">{{schedule.name}}</td>
+      <td><button class="btn btn-danger" ng-click="schedCtrl.delete(schedule)">Delete</button></td>
+    </tr>
+  </tbody>
+  </table>
+
+  <h3 ng-if="!schedCtrl.editing">New Schedule</h3>
+  <h3 ng-if="schedCtrl.editing">Edit Schedule</h3>
+    <form ng-submit="schedCtrl.save(schedCtrl.schedule)">
+      <input ng-model="schedCtrl.schedule.name">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  <button ng-if="editing" class="btn btn-success" ng-click="schedCtrl.newSchedule()">New Schedule</button>
+</div>
+

@@ -2,54 +2,54 @@
 
 angular.module('app')
 
-  .controller('AccountCtrl', ['$rootScope', '$scope', 'Account',
-    function($rootScope, $scope, Account) {
+.controller('AccountCtrl', ['$scope', 'Account',
+  function($scope, Account) {
 
-    $scope.account = new Account();
+    var vm = this;
+
+    vm.account = new Account();
 
     var getAccounts = function () {
       Account.query({}, function(data) {
-        $scope.accounts = data;
-        //$scope.setAccount(data[0].id);
+        vm.accounts = data;
+        vm.setAccount(data[0]._id);
       });
     };
 
     getAccounts();
 
-    $scope.newAccount = function() {
-      $scope.account = new Account();
-      $scope.editing = false;
+    vm.newAccount = function() {
+      vm.account = new Account();
+      vm.editing = false;
     };
 
-    $scope.activeAccount = function(account) {
-      $scope.account = account;
-      $scope.editing = true;
-      //$scope.setAccount(account.id);
+    vm.activeAccount = function(account) {
+      vm.account = account;
+      vm.editing = true;
+      vm.setAccount(account.id);
     };
 
-    $scope.save = function(account) {
+    vm.save = function(account) {
       if (account._id) {
         account.$update().then(function(){
           getAccounts();
         });
       } else {
-      $scope.account.$save().then(function() {
+      vm.account.$save().then(function() {
         getAccounts();
       });
       }
-      $scope.newAccount();
+      vm.newAccount();
     };
 
-    $scope.delete = function(account) {
+    vm.delete = function(account) {
       account.$delete(function(){
         getAccounts();
       });
     };
 
-    $scope.setAccount = function(account) {
-      //session.setAccount(account);
-      $scope.selectedAccount = account;
-      $scope.$emit('accountLoaded', {});
+    vm.setAccount = function(account) {
+      vm.selectedAccount = account;
     };
 
   }

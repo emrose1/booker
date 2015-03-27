@@ -1,4 +1,4 @@
-angular.module('app.schedule')
+/*angular.module('app.schedule')
 
 .controller('calendarCtrl', ['Schedule',
     function(Schedule) {
@@ -54,3 +54,4 @@ angular.module('app.schedule')
 
   }
 ]);
+*/

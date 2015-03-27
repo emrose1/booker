@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var mongoose = require('mongoose');
 var Account = require('./account.model');
 
 // Get list of accounts
@@ -13,7 +14,7 @@ exports.index = function(req, res) {
 
 // Get a single account
 exports.show = function(req, res) {
-  Account.findById(req.params.id, function (err, account) {
+  Account.findById(req.params.accountId, function (err, account) {
     if(err) { return handleError(res, err); }
     if(!account) { return res.send(404); }
     return res.json(account);
@@ -31,7 +32,7 @@ exports.create = function(req, res) {
 // Updates an existing account in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
-  Account.findById(req.params.id, function (err, account) {
+  Account.findById(req.params.accountId, function (err, account) {
     if (err) { return handleError(res, err); }
     if(!account) { return res.send(404); }
     var updated = _.merge(account, req.body);
@@ -44,7 +45,7 @@ exports.update = function(req, res) {
 
 // Deletes a account from the DB.
 exports.destroy = function(req, res) {
-  Account.findById(req.params.id, function (err, account) {
+  Account.findById(req.params.accountId, function (err, account) {
     if(err) { return handleError(res, err); }
     if(!account) { return res.send(404); }
     account.remove(function(err) {

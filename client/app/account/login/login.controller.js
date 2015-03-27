@@ -12,7 +12,6 @@ angular.module('app')
 
     $scope.login = function(form) {
       $scope.submitted = true;
-      console.log($scope.user);
 
       if(form.$valid) {
         Auth.login({

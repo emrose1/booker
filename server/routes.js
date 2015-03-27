@@ -4,7 +4,8 @@
 
 'use strict';
 
-var errors = require('./components/errors');
+var errors = require('./components/errors'),
+    accounts = require('./api/account');
 
 module.exports = function(app) {
 
@@ -12,7 +13,7 @@ module.exports = function(app) {
   app.use('/n', require('./api/account'));
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
-  app.use('/api/accounts', require('./api/account'));
+  app.use('/api/accounts', accounts);
   app.use('/auth', require('./auth'));
 
   // All undefined asset or api routes should return a 404

@@ -6,12 +6,14 @@ angular.module('app')
       .state('account', {
         url: '/account',
         templateUrl: 'app/account/account.html',
-        controller: 'AccountCtrl'
+        controller: 'AccountCtrl',
+        controllerAs: 'accountCtrl'
       })
       .state('schedule', {
         url: '/schedule',
         templateUrl: 'app/schedule/schedule.html',
-        controller: 'ScheduleCtrl'
+        controller: 'ScheduleCtrl',
+        controllerAs: 'schedCtrl'
       })
       .state('login', {
         url: '/login',
